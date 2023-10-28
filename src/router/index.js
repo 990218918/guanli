@@ -6,11 +6,11 @@ const routes = [
         component: () => import('../views/Main.vue'),
         redirect: '/check',
         children: [
-            {
-                path: '/home',
-                name: 'home',
-                component: () => import('../views/home/Home.vue')
-            },
+            // {
+            //     path: '/home',
+            //     name: 'home',
+            //     component: () => import('../views/home/Home.vue')
+            // },
             {
                 path: '/check',
                 name: 'check',
@@ -19,7 +19,30 @@ const routes = [
             {
                 path: '/collect',
                 name: 'collect',
-                component: () => import('../views/collect/Collect.vue')
+                component: () => import('../views/collect/Collect.vue'),
+                redirect: '/andingdan',
+                children: [
+                    {
+                        path: '/andingdan',
+                        name: 'andingdan',
+                        component: () => import('../views/collect/andingdan/Andingdan.vue')
+                    },
+                    {
+                        path: '/anshangpin',
+                        name: 'anshangpin',
+                        component: () => import('../views/collect/anshangpin/Anshangpin.vue')
+                    },
+                    {
+                        path: '/ankehu',
+                        name: 'ankehu',
+                        component: () => import('../views/collect/ankehu/Ankehu.vue')
+                    },
+                    {
+                        path: '/anri',
+                        name: 'anri',
+                        component: () => import('../views/collect/anri/Anri.vue')
+                    },
+                ]
             },
             {
                 path: '/information',
